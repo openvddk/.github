@@ -1,0 +1,54 @@
+name: Performance observation
+description: Share a throughput or timing observation, with the conditions it was measured under.
+title: "[Performance]: "
+labels:
+  - "type:performance"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Remove credentials, host names, IP addresses and customer data first.
+  - type: markdown
+    attributes:
+      value: |
+        Results posted here stay within the tester group. Please ask before publishing anything from this tracker.
+  - type: input
+    id: build
+    attributes:
+      label: OpenVDDK build
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: Tool and version
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Transport, vSphere version, datastore type
+    validations:
+      required: true
+  - type: input
+    id: disk
+    attributes:
+      label: Disk size and data actually in use
+      placeholder: "200 GiB disk, about 60 GiB in use"
+  - type: input
+    id: readers
+    attributes:
+      label: Parallel readers or disks
+      placeholder: "1 reader / 4 disks in parallel"
+  - type: input
+    id: network
+    attributes:
+      label: Network and reader CPU
+      description: "Link speed, and for NBDSSL whether the aes and pclmulqdq flags are present."
+  - type: textarea
+    id: result
+    attributes:
+      label: What you measured
+      description: Throughput and duration. If you compared with VMware's library on the same setup, give its figures the same way.
+    validations:
+      required: true
