@@ -1,0 +1,52 @@
+name: Compatibility report
+description: Tell us how OpenVDDK worked with your tool, including when it simply worked.
+title: "[Compatibility]: "
+labels:
+  - "type:compatibility"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Remove credentials, host names, IP addresses and customer data first.
+  - type: input
+    id: build
+    attributes:
+      label: OpenVDDK build
+      placeholder: "OpenVDDK 0.7.2 (74c3977e303d)"
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: Tool and version
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Transport, vSphere version, datastore type
+      placeholder: "NBDSSL, vSphere 7.0.3, VMFS"
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Worked without changes
+        - Worked, with a problem (open a problem report too)
+        - Did not work
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: What you ran (cold or warm migration, backup, other), how many disks, anything unusual.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Before submitting
+      options:
+        - label: I removed credentials, host names, IP addresses and customer data.
+          required: true
