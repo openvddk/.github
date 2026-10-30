@@ -1,0 +1,98 @@
+name: Problem report
+description: Something did not work as expected with an OpenVDDK build.
+title: "[Problem]: "
+labels:
+  - "type:problem"
+  - "status:needs-triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Remove credentials, host names, IP addresses and customer data first. Do not paste VMware library files or VMware log text; describe what VMware's library did instead. Security problems: report them privately through the repository's Security tab ("Report a vulnerability"), not as an issue.
+  - type: input
+    id: build
+    attributes:
+      label: OpenVDDK build
+      description: The first line of the library's log.
+      placeholder: "OpenVDDK: VixDiskLib: OpenVDDK 0.7.2 (74c3977e303d) ..."
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: Tool and version
+      description: The application that loads the library.
+      placeholder: "nbdkit 1.40 vddk plugin + virt-v2v 2.7 / own tool 3.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: transport
+    attributes:
+      label: Transport
+      options:
+        - HotAdd
+        - NBDSSL
+        - NBD
+        - Several (say which in the description)
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: vsphere
+    attributes:
+      label: vCenter and ESXi versions
+      placeholder: "vCenter 8.0.3 / ESXi 8.0.3"
+    validations:
+      required: true
+  - type: dropdown
+    id: datastore
+    attributes:
+      label: Datastore type
+      options:
+        - VMFS
+        - NFS 3
+        - NFS 4.1
+        - vSAN
+        - Other or not sure
+    validations:
+      required: true
+  - type: input
+    id: reader
+    attributes:
+      label: Reader OS, glibc, and AES flags
+      description: "For NBDSSL: does `grep -wo -m1 -e aes -e pclmulqdq /proc/cpuinfo` show both flags?"
+      placeholder: "AlmaLinux 9.6, glibc 2.34, aes and pclmulqdq present"
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you did
+      placeholder: "1. ...\n2. ...\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: Include whether VMware's library behaves differently in the same setup, described in your own words.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: OpenVDDK log excerpt (sanitized)
+      render: shell
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Before submitting
+      options:
+        - label: I removed credentials, host names, IP addresses and customer data.
+          required: true
+        - label: I did not paste VMware library files or VMware log text.
+          required: true
