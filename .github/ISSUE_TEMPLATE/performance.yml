@@ -8,10 +8,6 @@ body:
     attributes:
       value: |
         Issues are public. Remove credentials, host names, IP addresses and customer data first.
-  - type: markdown
-    attributes:
-      value: |
-        Results posted here stay within the tester group. Please ask before publishing anything from this tracker.
   - type: input
     id: build
     attributes:
@@ -49,6 +45,6 @@ body:
     id: result
     attributes:
       label: What you measured
-      description: Throughput and duration. If you compared with VMware's library on the same setup, give its figures the same way.
+      description: "Throughput and duration with OpenVDDK, and how you measured them. Please don't post figures for VMware's library here. If you compared the two, you can send those results privately to hello@openvddk.com."
     validations:
       required: true

@@ -12,7 +12,7 @@ body:
     id: build
     attributes:
       label: OpenVDDK build
-      placeholder: "OpenVDDK 0.7.2 (74c3977e303d)"
+      placeholder: "OpenVDDK 0.7.4 (94926da2f764)"
     validations:
       required: true
   - type: input

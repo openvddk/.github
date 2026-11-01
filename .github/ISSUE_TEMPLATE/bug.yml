@@ -14,7 +14,7 @@ body:
     attributes:
       label: OpenVDDK build
       description: The first line of the library's log.
-      placeholder: "OpenVDDK: VixDiskLib: OpenVDDK 0.7.2 (74c3977e303d) ..."
+      placeholder: "OpenVDDK: VixDiskLib: OpenVDDK 0.7.4 (94926da2f764) ..."
     validations:
       required: true
   - type: input

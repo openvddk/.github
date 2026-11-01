@@ -4,5 +4,5 @@ contact_links:
     url: https://github.com/openvddk/openvddk/security/advisories/new
     about: Report suspected security problems privately, not as a public issue.
   - name: Private question
-    url: mailto:hello@openvddk.com
-    about: For anything you would rather not post publicly.
+    url: https://github.com/openvddk/openvddk#support
+    about: For anything you would rather not post publicly, email hello@openvddk.com.
